@@ -3,46 +3,33 @@ import {Spinner} from "../../ui";
 import history from "../../../configuration/history";
 import {Router, Switch} from "react-router-dom";
 import {Redirect} from 'react-router';
-import BasicScreen from "../screens/BasicScreen";
 import {useIsBootstrapped} from "../hooks";
 import {createStyles} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import PublicRoute from "./PublicRoute";
-
-
-const useStyles = makeStyles(() => createStyles({
-  background: {
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  actionButtons: {
-    display: "flex",
-    flexGrow: 1,
-    justifyContent: 'center',
-  }
-}));
+import {AboutScreen} from "../../about";
+import {PublicRoute, UnloggedRoute} from "../../login/components/routes";
+import {LoginScreen} from "../../login";
+import {HomeScreen} from "../../home";
 
 const AppRouter = () => {
 
   const bootstrapped = useIsBootstrapped();
-  const classes = useStyles();
 
   if (!bootstrapped) {
     return (
-      <div className={classes.background}>
-        <Spinner/>
-      </div>
+      <Spinner/>
     );
   }
+  // If you want to add login Authentication behaviour:
+  // 1- Uncomment Login Route.
+  // 2- Replace PublicRoute for PrivateRoute Component on authentication required routes
   return (
     <Router history={history}>
       <Switch>
-        {/*<UnLoggedRoute path="/login" exact component={LoginScreen} />*/}
-        <PublicRoute path="/" exact component={BasicScreen}/>
-        <Redirect from="*" to="/"/>
+        {/*<UnloggedRoute path="/login" exact component={LoginScreen}/>*/}
+        <PublicRoute path="/home" exact component={HomeScreen}/>
+        <PublicRoute path="/about" exact component={AboutScreen}/>
+        <Redirect from="*" to="/home"/>
       </Switch>
     </Router>
   );

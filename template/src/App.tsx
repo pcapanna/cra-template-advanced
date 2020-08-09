@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import store from "./configuration/configureStore";
 import {createGenerateClassName, StylesProvider, ThemeProvider} from "@material-ui/styles";
 import {Provider} from "react-redux";
 import muiTheme from "./configuration/createMaterialTheme";
 import {actions as appActions, AppRouter} from "./modules/app";
-
+import {ToastContainer} from "react-toastify";
+import i18n from './configuration/i18n';
 
 const generateClassName = createGenerateClassName({
     disableGlobal: true,
@@ -19,6 +21,8 @@ function App() {
         store.dispatch(appActions.bootstrapRequest());
     });
 
+    const currentLanguage = i18n.language;
+
     return (
         <div className="App">
             <Provider store={store}>
@@ -26,6 +30,7 @@ function App() {
                     <ThemeProvider theme={muiTheme}>
                         {/*<MuiThemeProvider theme={muiTheme}>*/}
                         <AppRouter/>
+                        <ToastContainer/>
                         {/*</MuiThemeProvider>*/}
                     </ThemeProvider>
                 </StylesProvider>

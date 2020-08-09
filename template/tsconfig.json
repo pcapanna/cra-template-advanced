@@ -10,17 +10,26 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "noImplicitAny": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "preserve",
+    "allowUnreachableCode": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true
   },
   "include": [
     "src"
+  ],
+  "overrides": [
+    {
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
   ]
 }
