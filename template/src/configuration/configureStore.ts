@@ -1,6 +1,7 @@
 import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit';
 import {combineReducers} from "redux";
 import * as AppModule from "../modules/app";
+import * as ExampleModule from "../modules/example";
 import * as LoginModule from "../modules/login";
 import * as DrawerMenuModule from '../modules/drawer-menu';
 
@@ -14,14 +15,16 @@ function* sagas() {
     AppModule.sagas(),
     LoginModule.sagas(),
     DrawerMenuModule.sagas(),
+    ExampleModule.sagas(),
   ]);
 }
 
 // reducers
 const appReducer = combineReducers({
-    [AppModule.MODULE_NAME]: AppModule.reducers,
-    [LoginModule.MODULE_NAME]: LoginModule.reducers,
-    [DrawerMenuModule.MODULE_NAME]: DrawerMenuModule.reducers,
+  [AppModule.MODULE_NAME]: AppModule.reducers,
+  [LoginModule.MODULE_NAME]: LoginModule.reducers,
+  [DrawerMenuModule.MODULE_NAME]: DrawerMenuModule.reducers,
+  [ExampleModule.MODULE_NAME]: ExampleModule.reducers,
 });
 
 const rootReducer = (state: any, action: Action<any>) => {

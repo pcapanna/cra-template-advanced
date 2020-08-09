@@ -10,6 +10,7 @@ import {AboutScreen} from "../../about";
 import {PublicRoute, UnloggedRoute} from "../../login/components/routes";
 import {LoginScreen} from "../../login";
 import {HomeScreen} from "../../home";
+import {ExampleScreen} from "../../example";
 
 const AppRouter = () => {
 
@@ -28,6 +29,7 @@ const AppRouter = () => {
       <Switch>
         {/*<UnloggedRoute path="/login" exact component={LoginScreen}/>*/}
         <PublicRoute path="/home" exact component={HomeScreen}/>
+        <PublicRoute path="/example" exact component={ExampleScreen}/>
         <PublicRoute path="/about" exact component={AboutScreen}/>
         <Redirect from="*" to="/home"/>
       </Switch>

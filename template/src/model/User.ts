@@ -1,6 +1,4 @@
-import {AbstractEntity} from "./AbstractEntity";
-
-export interface User extends AbstractEntity {
+export interface User {
   id: string;
   name: string;
 }
