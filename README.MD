@@ -5,10 +5,10 @@ This is an unofficial base template for [Create React App](https://github.com/fa
 This templates extends react-sripts official typescript template. Adds support for redux, redux-sagas, react-router, @material-ui and basic app initialization and customization.
 
 Now also features:
- - login module, with basic configuration an authentication flow for your application
- - layout module, an example application responsive Layout 
- - menu side drawer module, an example resposive side drawer for your application
- - example module, an example showing how to use redux for fetching data from an API
+ - login module, with basic configuration for an authentication flow
+ - layout module, with responsive Layout Components
+ - menu side drawer module, a resposive side drawer
+ - example module, an example module showing how to use redux for fetching data from an API
  - some personal UI modules 
 
 To use this template, add `--template @pcapanna/cra-template-advanced` when creating a new app.
