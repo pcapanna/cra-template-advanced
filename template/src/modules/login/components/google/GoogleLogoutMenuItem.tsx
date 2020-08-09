@@ -3,6 +3,7 @@ import i18next from "i18next";
 import {useTranslation} from "react-i18next";
 import {MenuItem} from "@material-ui/core";
 import {GoogleLogin, GoogleLogout} from 'react-google-login';
+import {GOOGLE_CLIENT_ID} from "../../constants";
 
 
 i18next.addResources('en', 'GoogleLogout', {
@@ -34,7 +35,7 @@ const GoogleLogoutMenuItem = (
 
     return (
       <GoogleLogout
-        clientId="550680093505-99jvso0njjmhsu9n9bc3fiaqd9aseslf"
+        clientId={GOOGLE_CLIENT_ID}
         render={render}
         // onLogoutSuccess={onLogoutSuccess}
         // onFailure={onLogoutFailure}

@@ -7,6 +7,8 @@ import googleLogoSvg from "../../resources/logo_google.svg";
 import GoogleUserSerializer from "./GoogleUserSerializer";
 import {User} from "../../../../model";
 import _ from "lodash";
+import {GOOGLE_CLIENT_ID} from "../../constants";
+
 
 i18next.addResources('en', 'GoogleLogin', {
   'Sign in With Google': 'Sign in With Google'
@@ -26,7 +28,7 @@ const GoogleLoginButton = (
 
   return (
     <GoogleLogin
-      clientId="550680093505-99jvso0njjmhsu9n9bc3fiaqd9aseslf"
+      clientId={GOOGLE_CLIENT_ID}
       render={renderProps => (
         <Button variant="contained" color="default" disabled={renderProps.disabled}
                 onClick={renderProps.onClick} style={{display: 'flex', width: '100%'}}>
