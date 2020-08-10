@@ -1,7 +1,8 @@
-# cra-template-advanced
+cra-template-advanced
 ======
 
 Custom template for [Create React App](https://github.com/facebook/create-react-app) featuring redux, redux-saga, @material-ui and some serious examples of usage.
+-----------------------------------------------------------------------------
 
 Extends react-sripts official typescript template. Added redux, redux-sagas, react-router, @material-ui and other basic common dependencies in real day use.
 
